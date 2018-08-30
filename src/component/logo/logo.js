@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import logoImg from './favicon.ico'
 import './logo.css'

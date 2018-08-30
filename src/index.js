@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -22,4 +23,4 @@ ReactDOM.render((
         <Route path="/register" component={Register} />
       </div>
     </BrowserRouter>
-  </Provider>), document.getElementById('root'));
+  </Provider>), document.getElementById('root'))
