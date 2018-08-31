@@ -124,9 +124,21 @@
         }
       ],
       "react/prefer-stateless-function": "warn",
-      "object-curly-newline": ["warn", {"ImportDeclaration": "never", "ExportDeclaration":"never"}],
+      "object-curly-newline": [
+        "warn",
+        {
+          "ImportDeclaration": "never",
+          "ExportDeclaration": "never"
+        }
+      ],
       "no-unused-vars": "warn",
-      "react/destructuring-assignment": ["warn", "always", { "ignoreClassFields": true }],
+      "react/destructuring-assignment": [
+        "warn",
+        "always",
+        {
+          "ignoreClassFields": true
+        }
+      ],
       "react/prop-types": "warn",
       "react/no-unused-state": "warn"
     },

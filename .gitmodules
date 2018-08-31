@@ -1,0 +1,3 @@
+[submodule "jhunting-backend"]
+	path = server
+	url = git@github.com:LikeSundayLikeRain/jhunting-backend.git
