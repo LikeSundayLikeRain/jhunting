@@ -1,8 +1,13 @@
 import * as React from 'react'
 import { List, InputItem, Radio, WhiteSpace, Button } from 'antd-mobile'
+import { connect } from 'react-redux'
 
 import Logo from '../../component/logo/logo'
+import { register } from '../../redux/user.redux'
 
+@connect(
+  state => state.user, { register },
+)
 class Register extends React.Component {
   constructor(props) {
     super(props)
@@ -15,7 +20,7 @@ class Register extends React.Component {
   }
 
   handleRegister() {
-    console.log(this.state)
+    this.props.register(this.state)
   }
 
   handleChange(key, val) {
@@ -30,6 +35,7 @@ class Register extends React.Component {
       <div>
         <Logo />
         <List>
+          {this.props.msg ? <p className="error-msg">{this.props.msg}</p> : null}
           <InputItem onChange={val => this.handleChange('user', val)}>Username</InputItem>
           <WhiteSpace />
           <InputItem onChange={val => this.handleChange('pwd', val)} type="password">Passowrd</InputItem>

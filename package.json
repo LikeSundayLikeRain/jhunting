@@ -140,7 +140,8 @@
         }
       ],
       "react/prop-types": "warn",
-      "react/no-unused-state": "warn"
+      "react/no-unused-state": "warn",
+      "no-shadow": "warn"
     },
     "env": {
       "browser": true,

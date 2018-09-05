@@ -11,10 +11,14 @@ import Register from './container/register/register'
 import reducers from './reducer'
 import AuthRouter from './component/authroute/authroute'
 
-const store = createStore(reducers, compose(
-  applyMiddleware(thunk), (window.devToolsExtention ? window.devToolsExtention() : f => f),
-))
+import './index.css'
 
+/* eslint-disable no-underscore-dangle */
+const store = createStore(reducers, compose(
+  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+))
+/* eslint-enable */
 const Boss = () => (<h2>Boss</h2>)
 
 ReactDOM.render((
