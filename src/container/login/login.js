@@ -1,16 +1,16 @@
+// @flow
 import * as React from 'react'
 import { List, InputItem, WingBlank, WhiteSpace, Button } from 'antd-mobile'
 import Logo from '../../component/logo/logo'
 
 type Props = {
-  history: any
+  history: Object
 }
 
 class Login extends React.Component<Props> {
-  constructor(props) {
-    super(props)
-    this.register = this.register.bind(this)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   register() {
     const { history } = this.props
@@ -29,7 +29,7 @@ class Login extends React.Component<Props> {
           </List>
           <Button type="primary">Login</Button>
           <WhiteSpace />
-          <Button onClick={this.register} type="primary">Register</Button>
+          <Button onClick={() => this.register()} type="primary">Register</Button>
         </WingBlank>
       </div>
     )

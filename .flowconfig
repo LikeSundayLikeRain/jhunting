@@ -12,5 +12,6 @@ module.file_ext=.js
 module.file_ext=.jsx
 module.file_ext=.mjs
 module.file_ext=.json
+esproposal.decorators=ignore
 
 [strict]

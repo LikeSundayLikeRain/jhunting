@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react'
 import { List, InputItem, Radio, WhiteSpace, Button } from 'antd-mobile'
 import { connect } from 'react-redux'
@@ -5,11 +6,23 @@ import { connect } from 'react-redux'
 import Logo from '../../component/logo/logo'
 import { register } from '../../redux/user.redux'
 
+type Props = {
+  msg: number,
+  register: Function
+}
+
+type State = {
+  user: string,
+  pwd: string,
+  repeatpwd: string,
+  type: string,
+}
+
 @connect(
-  state => state.user, { register },
+  state => (state.userReducer), { register },
 )
-class Register extends React.Component {
-  constructor(props) {
+class Register extends React.Component<Props, State> {
+  constructor(props: Object) {
     super(props)
     this.state = {
       user: '',
@@ -23,7 +36,7 @@ class Register extends React.Component {
     this.props.register(this.state)
   }
 
-  handleChange(key, val) {
+  handleChange(key: string, val: string) {
     this.setState({
       [key]: val,
     })

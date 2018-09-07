@@ -1,12 +1,18 @@
+// @flow
 import * as React from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
+type Props = {
+  location: any,
+  history: any
+}
+
 @withRouter
-class AuthRouter extends React.Component {
+class AuthRouter extends React.Component<Props> {
   componentDidMount() {
     const publicList = ['/login', '/register']
-    const { location } = this.props
+    const { location, history } = this.props
 
     if (publicList.indexOf(location.pathname) > -1) {
       return
@@ -17,7 +23,6 @@ class AuthRouter extends React.Component {
         if (res.data.code === 0) {
           //
         } else {
-          const { history } = this.props
           history.push('/login')
         }
       }

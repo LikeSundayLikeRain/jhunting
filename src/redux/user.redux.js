@@ -31,7 +31,7 @@ function registerSuccess(date) {
   return { type: REGISTER_SUCCESS, payload: date }
 }
 
-export const register = (registerInfo: any) => {
+export const register = (registerInfo: Object) => {
   const { user, pwd, repeatpwd, type } = registerInfo
   if (!user || !pwd || !repeatpwd || !type) {
     return errorMsg('Missing Information')
