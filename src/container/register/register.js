@@ -8,7 +8,8 @@ import { register } from '../../redux/user.redux'
 
 type Props = {
   msg: number,
-  register: Function
+  register: Function,
+  redirectTo: string
 }
 
 type State = {

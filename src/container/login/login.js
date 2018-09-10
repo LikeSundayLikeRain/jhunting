@@ -8,14 +8,21 @@ import Logo from '../../component/logo/logo'
 import { login } from '../../redux/user.redux'
 
 type Props = {
-  history: Object
+  history: Object,
+  redirectTo: string,
+  login: Function
+}
+
+type State = {
+  user: string,
+  pwd: string
 }
 
 @connect(
   state => state.userReducer, { login },
 )
-class Login extends React.Component < Props > {
-  constructor(props) {
+class Login extends React.Component < Props, State > {
+  constructor(props: Object) {
     super(props)
     this.state = {
       user: '',
@@ -32,7 +39,7 @@ class Login extends React.Component < Props > {
     this.props.login(this.state)
   }
 
-  handleChange(key, val) {
+  handleChange(key: string, val: string) {
     this.setState({
       [key]: val,
     })
